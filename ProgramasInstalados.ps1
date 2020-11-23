@@ -1,6 +1,6 @@
 ﻿
 $NombreEquipo= HOSTNAME
-$DireccionIP= ipconfig | Select-String -Pattern "IPv4" |% {($_ -replace "`r","") -replace "`n",""}
+$DireccionIP= ipconfig | Select-String -Pattern "IPv4" | Select-String -Pattern "192.168.2" |% {($_ -replace "`r","") -replace "`n",""}
 $DireccionIP=$DireccionIP.Substring($DireccionIP.IndexOf(":")+1, $DireccionIP.Length - $DireccionIP.IndexOf(":")-1)
 $fecha= date |% {($_ -replace "`r","") -replace "`n",""}
 #$rutaArchivoDeResultado="C:\Users\hmejia\Desktop\SoftwareInstalado\$DireccionIP.txt"
