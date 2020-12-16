@@ -1,4 +1,7 @@
 ﻿
+# Array de programas o software que no debe incluirse
+# $noContarSoftware=@("")
+
 $NombreEquipo= HOSTNAME
 $DireccionIP= ipconfig | Select-String -Pattern "IPv4" | Select-String -Pattern "192.168.2" |% {($_ -replace "`r","") -replace "`n",""}
 $DireccionIP=$DireccionIP.Substring($DireccionIP.IndexOf(":")+1, $DireccionIP.Length - $DireccionIP.IndexOf(":")-1)
@@ -17,3 +20,4 @@ echo "--------------------------------------------------------------------------
 
 
 #powershell.exe -ExecutionPolicy Bypass -File C:\Users\hmejia\Desktop\ProgramasInstalados.ps1
+
